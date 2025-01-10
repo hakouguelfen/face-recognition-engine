@@ -1,22 +1,18 @@
-# Classic Cipher Application
-A Python application that implements various classical cryptographic ciphers for text encryption and decryption.
+# Face Recognition Engine
+A machine learning-powered backend for real-time facial detection and recognition, using Convolutional Neural Networks (CNN). This repository focuses on training, learning, and prediction processes for detecting faces in images, designed as the backend for a full facial detection app.
 
 ## Features
-* Multiple classical cipher implementations:
- * Caesar Cipher
- * Vigenère Cipher
- * Substitution Cipher
- * Transposition Cipher
-* Support for both encryption and decryption
-* GUI interface
-* Support for uppercase, lowercase letters, and spaces
-* Comprehensive test suite using pytest
+* CNN-based model for facial detection
+* Real-time face detection and recognition
+* Preprocessing of input images for better accuracy
+* Supports integration with front-end applications via API
+* High accuracy for facial recognition tasks
 
 ## Installation
 1. Clone the repository:
 ```bash
-git clone https://github.com/hakouguelfen/facial_detection.git
-cd facial_detection
+git clone https://github.com/hakouguelfen/face-recognition-engine.git
+cd face-recognition-engine
 ```
 
 2. Ensure you have Python 3.7+ installed:
@@ -53,65 +49,15 @@ pytest
 
 Run tests with coverage report:
 ```bash
-pytest --cov=ciphers tests/
+pytest --cov
 ```
 
 Run specific test file:
 ```bash
-pytest tests/test_caesar.py
+pytest tests/test_.py
 ```
 
-### Test Structure
-
-```
-tests/
-├── __init__.py
-├── test_caesar.py
-├── test_vigenere.py
-├── test_substitution.py
-└── test_transposition.py
-```
-
-### Test Categories
-* Unit Tests: Testing individual cipher implementations
- * Encryption/decryption functionality
- * Edge cases
- * Input validation
-* Parametrized Tests: Testing multiple inputs
-
-```python
-messages = [
-    ("", 1),  # Edge case: empty message
-    ("A", 1),  # Single character
-    ("AB", 1),  # Single key
-    ("AB", 2),  # Key equal to message length
-    ("This is a test message!", 4),  # Common case
-    ("Short", 10),  # Key greater than message length
-    ("EdgeCase", 3),  # Odd message length
-    ("AnotherTest", 5),  # Key not dividing message length evenly
-]
-@pytest.mark.parametrize("message, key", messages)
-def test_encrypt_decrypt(message, key):
-    """Test encryption followed by decryption returns the original message."""
-    encrypted = transposition.cipher(message, key, CMD.ENCRYPT)
-    decrypted = transposition.cipher(encrypted, key, CMD.DECRYPT)
-    assert decrypted == message
-```
-
-## Supported Ciphers
-### Caesar Cipher
-* Shifts each letter in the plaintext by a fixed number of positions
-* Key: Integer (shift value)
-
-### Vigenère Cipher
-* Uses a keyword to shift letters based on the keyword's letters
-* Key: String (keyword)
-
-### Substitution Cipher
-* Replaces each letter with another letter based on a substitution alphabet
-* Key: 26-letter substitution alphabet
 
 ## Acknowledgments
-* Inspiration from classical cryptography
 * Python community resources
 * pytest documentation and community
