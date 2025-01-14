@@ -2,7 +2,7 @@ from flask import Flask, request
 from sklearn.neural_network import MLPClassifier
 import joblib
 
-import cv
+import model
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def save_face():
     image = request.files["image"]
     label = request.form["label"]
 
-    cv.save_new_face(image, label)
+    model.save_new_face(image, label)
     return {"message": "Saved successfully", "label": label}
 
 
@@ -20,7 +20,7 @@ def save_face():
 def predict():
     image = request.files["image"]
 
-    message = cv.predict_face(image)
+    message = model.predict_face(image)
     return {"message": message}
 
 

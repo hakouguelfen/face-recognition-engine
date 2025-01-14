@@ -20,7 +20,17 @@ cd face-recognition-engine
 python --version
 ```
 
-3. Install required dependencies:
+3. Create virtual env
+```bash
+python3 -m venv env
+```
+
+4. Activate virtual env
+```bash
+source bin/env/activate
+```
+
+5. Install required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -29,25 +39,41 @@ pip install -r requirements.txt
 ### Using Docker
 build docker image
 ```bash
-❯ docker build -t face-recognition .
+docker build -t face-recognition .
 ```
 
 run docker image
 ```bash
-❯ docker run -d -p 3000:3000 -v $(pwd):/app --name myapp face-recognition
+docker run -d -p 3000:3000 -v $(pwd):/app --name myapp face-recognition
 ```
 
-4. Dependencies include:
+### Dependencies include:
  * pytest
  * pytest-cov (for coverage reports)
  * scikit-learn (for machine learning algorithms)
  * Flask (for http requests)
+ * face_recognition (for extracting facial encodings)
 
 ## Usage
 ### Command Line Interface
-
 ```bash
 python facial_detection/main.py
+```
+
+### Exposed endpoints 
+* save_face
+```bash
+curl -X POST \
+  -F "image=@/path/image.jpg" \
+  -F "label=Person name" \
+  http://localhost:3000/save_face
+```
+
+* predict
+```bash
+curl -X POST \
+  -F "image=@/path/image.jpg" \
+  http://localhost:3000/predict
 ```
 
 ## Testing
