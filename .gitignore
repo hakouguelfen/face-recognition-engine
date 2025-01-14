@@ -12,3 +12,7 @@ __pycache__/
 env
 .pytest_cache
 .coverage
+
+dataset
+test.py
+train.py

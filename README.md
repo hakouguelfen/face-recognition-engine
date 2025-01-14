@@ -26,6 +26,17 @@ python --version
 pip install -r requirements.txt
 ```
 
+### Using Docker
+build docker image
+```bash
+❯ docker build -t face-recognition .
+```
+
+run docker image
+```bash
+❯ docker run -d -p 3000:3000 -v $(pwd):/app --name myapp face-recognition
+```
+
 4. Dependencies include:
  * pytest
  * pytest-cov (for coverage reports)
