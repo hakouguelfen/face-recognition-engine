@@ -29,6 +29,10 @@ python3 -m venv env
 ```bash
 source env/bin/activate
 ```
+for windows
+```bash
+.env/bin/activate
+```
 
 5. Install required dependencies:
 
