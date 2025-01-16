@@ -31,7 +31,7 @@ source env/bin/activate
 ```
 for windows
 ```bash
-./env/bin/activate
+.\env\Scripts\activate
 ```
 
 5. Install required dependencies:
