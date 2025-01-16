@@ -1,6 +1,4 @@
 from flask import Flask, request
-from sklearn.neural_network import MLPClassifier
-import joblib
 
 import model
 
