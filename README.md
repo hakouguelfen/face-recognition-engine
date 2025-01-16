@@ -76,6 +76,19 @@ curl -X POST \
   http://localhost:3000/predict
 ```
 
+### Using Graphical Interface\
+Run the following command to start the GUI:
+```bash
+python interface.py
+```
+First you will be prompted with this screen:
+![Image](readme/image.png)
+
+You will have to click on the "Add User" button to add a new person to the database. You will be prompted the file explorer to select the image of the person you want to add. After selecting the image, you will be prompted to enter the name of the person. After entering the name, the person will be added to the database.
+
+Second you can click on the "Predict Predict" button to predict the person in the image. You will be prompted the file explorer to select the image you want to predict. After selecting the image, the person in the image will be predicted and displayed on the screen.
+
+
 ## Testing
 
 ### Running Tests
